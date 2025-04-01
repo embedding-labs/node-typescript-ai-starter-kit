@@ -1,5 +1,6 @@
 import * as Mixpanel from 'mixpanel';
 import { PostHog } from 'posthog-node';
+import logger from '../../src/libs/logger';
 
 const mixpanel = Mixpanel.init(process.env.MIXPANEL_TOKEN || '');
 
@@ -26,8 +27,8 @@ export const analyticsUtil = {
     postHogProperties?: any
   }) => {
     if (process.env.NODE_ENV !== 'production') {
-      console.log(eventName);
-      console.log(properties);
+      logger.info(eventName);
+      logger.info(properties);
     } else {
       // Mixpanel
       properties.distinct_id = userId;

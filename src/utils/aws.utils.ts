@@ -73,7 +73,6 @@ const awsUtils = {
         if (dev) {
             key = `dev/workspace/${workspaceId}/${new Date().getTime()}${fileName}`;
         }
-    console.log(key);
         // Set up S3 parameters
         const s3Params = {
             Bucket: awsConfig.bucketName,
