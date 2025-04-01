@@ -2,6 +2,10 @@
   "name": "node-typescript-server",
   "version": "1.0.0",
   "description": "Backend server for Node Typescript",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/embedding-labs/node-typescript-ai-starter-kit"
+  },
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc",
