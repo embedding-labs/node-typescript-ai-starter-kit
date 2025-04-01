@@ -1,0 +1,46 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Specifies the technologies to be used for the API development, ensuring consistency across the project.
+globs: src/**/*.*
+---
+
+#API Tech Stack
+
+## Core Technologies
+- **Runtime:** Node.js (v16+)
+- **Framework:** Express.js
+- **Language:** TypeScript 
+- **Database:** MongoDB with Mongoose ODM
+- **Authentication:** JSON Web Tokens (JWT)
+- **Validation:** Joi
+
+## Standards and Patterns
+- Use functional programming approach over class-based OOP
+- Implement service-oriented architecture
+- Maintain separation of concerns (routes, controllers, services, models)
+
+## Third-Party Services
+- **Storage:** AWS S3,  use ./utils/aws for s3 realted codes
+- **Analytics:** Mixpanel analytics tracking using ./utils/analyticsUtil
+
+## Security Considerations
+- Validate and sanitize all inputs only in ./validators only
+- Use environment variables for secrets
+- Implement proper error handling to avoid information leakage
+
+## Environment Configuration
+- Use .env.development files for local development
+- Store sensitive configuration in environment variables
+
+# Authentication
+- Global authmiddleware added in server.ts
+- userObjectId and workspaceObjectId is added in req.body in all request for managining workspace level auth
+
+## API Design
+- Follow RESTful API best practices
+- Use standard HTTP methods (GET, POST)
+- Implement consistent error formats

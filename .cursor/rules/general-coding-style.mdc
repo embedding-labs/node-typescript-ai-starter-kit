@@ -1,0 +1,122 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+---
+description: Ensures secure, efficient code following RESTful API best practices with error handling and input validation.
+globs: **/*.*
+---
+- Ensure secure, efficient code following RESTful API best practices.
+
+## Folder Structure
+```
+src/
+├── api/
+│   └── routes/            # API route definitions
+│       ├── index.ts       # Route aggregator
+│       ├── user.routes.ts # User-related routes
+│       └── ...
+├── config/                # Configuration files
+│   ├── index.ts           # Config aggregator
+│   ├── auth.ts            # Auth configuration
+│   └── ...
+├── constants/             # Application constants
+│   └── ...
+├── controllers/           # Request handlers
+│   ├── user.controller.ts # User controller
+│   └── ...
+├── interfaces/            # TypeScript interfaces
+│   ├── user.interface.ts  # User-related interfaces
+│   └── ...
+├── libs/                  # Utility libraries
+│   └── ...
+├── middlewares/           # Express middlewares
+│   ├── auth.middleware.ts # Authentication middleware
+│   └── ...
+├── models/                # MongoDB schema models
+│   ├── user.model.ts      # User model
+│   └── ...
+├── services/              # Business logic
+│   ├── user.service.ts    # User service
+│   └── tools/             # AI tools services
+│       └── ...
+├── utils/                 # Utility functions
+│   └── ...
+└── validators/            # Input validation schemas
+    ├── user.validator.ts  # User validation rules
+    └── ...
+```
+
+## Coding Standards
+
+### File Naming Conventions
+- All files should use kebab-case: `example-file.ts`
+- Files should be grouped by feature/domain (e.g., user, workspace)
+- Each file should have a specific responsibility
+
+### Import Structure
+- Imports should be grouped in the following order:
+  1. External libraries/dependencies
+  2. Config/constants
+  3. Interfaces
+  4. Models
+  5. Services/utils
+  6. Controllers/routes
+
+### Function Style
+- Use functional programming approach with exported functions
+- No classes - direct function exports
+- Use async/await for asynchronous operations
+- Implement proper error handling with try/catch blocks
+
+### Error Handling
+- Use descriptive error messages
+- Log errors with appropriate context
+- Return standardized error responses
+
+### Middleware Usage
+- Apply validation middleware for all inputs
+- Use authentication middleware for protected routes
+- Implement error handling middleware
+
+### Models Structure
+- Define clear MongoDB schemas with proper typing
+- Include timestamps for all models
+- Add appropriate indexes for query optimization
+- Document all schema fields
+
+### Service Pattern
+- Services should contain business logic
+- Services should not directly interact with request/response objects
+- Each service function should have a single responsibility
+- Services should return standardized response objects
+
+### Controllers Structure
+- Controllers should validate input through middleware
+- Controllers should only call services and handle responses
+- Do not add business logic in controller
+- Use standardized response formats
+
+### API Response Format
+```typescript
+// Success response
+res.apiSuccess(data, message);
+
+// Error response
+res.apiError(message, statusCode);
+```
+
+### Validation
+- Use Joi for request validation
+- Define validation schemas in dedicated validator files
+- Apply validation middleware to routes
+
+###Analytics Tracking
+- Track all significant user actions using analyticsUtil
+- Always include userId in tracking events
+- For workspace-related actions include workspaceId 
+- Use consistent event naming convention (e.g., "Resource Created", "Workspace Home Opened")
+- Track events at the completion of operations to ensure data is accurate
+- Include relevant properties that provide context to the event
