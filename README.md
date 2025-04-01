@@ -2,6 +2,8 @@
 
 A production-ready Node.js starter template with TypeScript, featuring a well-organized project structure, robust error handling, and built-in authentication support.
 
+📦 **Template Repository**: [github.com/embedding-labs/node-typescript-ai-starter-kit](https://github.com/embedding-labs/node-typescript-ai-starter-kit)
+
 ## Features
 
 - 🚀 **TypeScript** - Write type-safe code with the latest ECMAScript features
@@ -89,13 +91,65 @@ src/
 
 ## Environment Variables
 
-Create a `.env` file in the root directory and add the following variables:
+Create a `.env` file in the root directory by copying `.env.example`. Below are the key environment variables grouped by functionality:
 
+### Server Configuration
 ```env
+PORT=8080
 NODE_ENV=development
-PORT=3000
-MONGODB_URI=your_mongodb_uri
+APP_URL=http://localhost:8080
+```
+
+### Database Configuration
+```env
+MONGO_URL=mongodb+srv://your_mongodb_url
+```
+
+### Authentication
+```env
 JWT_SECRET=your_jwt_secret
+JWT_EXPIRES_IN=30d
+JWT_ISSUER=nodetypescript
+```
+
+### OAuth (Google)
+```env
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+### AWS Configuration
+```env
+AWS_KEY=your_aws_key
+AWS_SECRET_KEY=your_aws_secret_key
+AWS_BUCKET_NAME=your_bucket_name
+```
+
+### AI Services
+```env
+REPLICATE_API_TOKEN=your_replicate_token
+FIREWORKS_API_KEY=your_fireworks_key
+OPENAI_API_KEY=your_openai_key
+```
+
+### Email Service (Brevo)
+```env
+BREVO_API_KEY=your_brevo_key
+BREVO_SENDER_EMAIL=noreply@yourdomain.com
+BREVO_SENDER_NAME=Your App Name
+BREVO_WELCOME_TEMPLATE_ID=1
+BREVO_RESET_PASSWORD_TEMPLATE_ID=2
+BREVO_VERIFY_EMAIL_TEMPLATE_ID=3
+BREVO_TIMEOUT=5000
+BREVO_RETRY_ATTEMPTS=3
+BREVO_RETRY_DELAY=1000
+```
+
+### Analytics
+```env
+MIXPANEL_TOKEN=your_mixpanel_token
+POSTHOG_TOKEN=your_posthog_token
+LOG_LEVEL=debug
 ```
 
 ## Contributing
